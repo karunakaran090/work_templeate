@@ -1,0 +1,90 @@
+<html>
+<head>
+	<title></title>
+</head>
+<!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<script type="text/javascript" src="script/jquery-2.1.4.min.js"></script>
+<!-- <script type="text/javascript" src="script/app.js"></script> -->
+<style type="text/css">
+
+</style>
+<body>
+
+<!-- <header>
+
+</header>
+
+<div class="twt_cont">
+	<div class="row bdr">
+		<div id="tweet_val" class="tweet_val">
+			<textarea type="textarea" rows="3" resize="false" id="textVal" placeholder="what happning?"></textarea>
+			<div id="img_view">
+			</div>
+		<section class="row">
+			<input type="file" id="twtImg" />
+			<button class="pull-right btn btn-default twt_btn" onclick="tweetPost()">Tweet</button>
+		</section>
+		</div>
+		<div id="tweet_list">
+			
+		</div>
+
+	</div>
+</div> -->
+
+<div class="twt_cont">
+	<input type="text" class="form-group" id="name">
+	<button class="btn btn-default" onclick="saveValue()">save data</button>
+	
+</div>
+<!--
+<button onclick="setVal()">set Data</button>
+<button onclick="getVal()">show Data</button>
+-->
+	<div id='additem'>d</div>
+	
+	
+<script type="text/javascript">
+var nameJSON = [];
+var data = [];
+console.log('before  ' + data);
+	
+	$(document).ready(function(){
+		getVal();
+		displayName(nameJSON);
+	});
+
+
+	function saveValue() {
+		var txt = $('#name').val();
+		item = {"name":txt, "std":"lkg"};
+		nameJSON.push(item);
+		var jsonstring = JSON.stringify(nameJSON);
+		displayValue(txt);
+		setVal(nameJSON);
+		getVal(nameJSON);
+	}
+	function displayValue(n){
+		$('#additem').append('<h1>' +n+ '</h1>');
+	}
+	function setVal(){
+		localStorage.setItem("newName", JSON.stringify(nameJSON));
+	}
+	function getVal(){
+		data = JSON.parse(localStorage.getItem("newName"));
+		
+		nameJSON = data.slice();
+		console.log('json  '+nameJSON);
+	}
+	function displayName(){
+		for(var i=0; i<data.length;i++){
+			$('#additem').append('<h1>' +data[i].name+ '</h1>');
+		}
+	}
+	
+
+</script>
+</body>
+
+</html>

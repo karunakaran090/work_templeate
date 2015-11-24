@@ -1,0 +1,9 @@
+
+header{height: 60px;background: #93A644 }
+.twt_cont{width: 600px;margin: auto;margin-top:50px;}
+.bdr{border: 1px solid #93A644;border-radius: 5px;}
+.tweet_val{background: #E4E8D0 ;padding: 10px 10px;border-top-left-radius: 5px;border-top-right-radius: 5px;}
+textarea{resize:none;width: 100%;padding: 10px}
+.twt_btn{margin: 10px 15px 0 0}
+#twt_img{width: 150px;height: 100px;}
+.postImg{width: 200px;height: 150px;}
